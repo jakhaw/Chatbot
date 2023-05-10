@@ -14,13 +14,13 @@
                 <div class="title">
                     <h1>chatbot</h1>
                 </div>
-                <form action="">
+                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
                     <div class="userinput">
                         <h3>question:</h3>
-                        <textarea type="text" name="user" placeholder="type your question"></textarea>
+                        <textarea name="user" placeholder="Say hello!"></textarea>
                         <h3>answer:</h3>
                         <div class="answer">
-                            
+                            <?php echo "How can I help You?"; ?>
                         </div>
                     </div>
                     <div class="subbutton">
