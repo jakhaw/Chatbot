@@ -1,9 +1,13 @@
 <?php
 session_start();
-
+if(isset($_SESSION['login'])){
+    header("Location: adminpanel.php");
+    exit();
+}
 if($_SERVER['REQUEST_METHOD'] === "POST"){
-    $_SESSION['login'] = $_POST['login'];
+    $_SESSION['username'] = $_POST['username'];
     $_SESSION['password'] = $_POST['password'];
+    $_SESSION['signin'] = $_POST['signin'];
     header('Location: admin.php');
 }
 ?>
@@ -13,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Admin Login</title>
 </head>
 <body>
@@ -26,7 +30,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
                 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
                     <div class="admininput">
                         <h3>Username:</h3>
-                        <input type="text" name="login">
+                        <input type="text" name="username">
                         <h3>Password:</h3>
                         <input type="password" name="password">
                     </div>
@@ -39,7 +43,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
                     ?>
                     </p>
                     <div class="subbutton">
-                        <input type="submit" name="signin" value="Sign in">
+                        <input type="submit" name="signin" value="Sign In">
                     </div>
                 </form>
             </div>
