@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
     $_SESSION['tip'] = $_POST['tip'];
     $_SESSION['answer'] = $_POST['answer'];
     $_SESSION['add'] = $_POST['add'];
-    header('Location: addoption.php');
+    header('Location: add.php');
 }
 ?>
 <!DOCTYPE html>
@@ -44,7 +44,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
                 <ol>
                 <?php
                 foreach($_SESSION['list'] as $option){
-                    echo "<li>{$option['tips']} | {$option['answer']}</li>";
+                    echo "<li>{$option['tips']} | {$option['answer']} > <a href='edit.php'>Edit</a> <</li>";
                 }
                 ?>
                 </ol>
