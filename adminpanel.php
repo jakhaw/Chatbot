@@ -4,12 +4,6 @@ if(!isset($_SESSION['login'])){
     header("Location: adminpage.php?error=loginfalse");
     exit();
 }
-if($_SERVER['REQUEST_METHOD'] === "POST"){
-    $_SESSION['tip'] = $_POST['tip'];
-    $_SESSION['answer'] = $_POST['answer'];
-    $_SESSION['add'] = $_POST['add'];
-    header('Location: add.php');
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,9 +19,9 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
         <section>
             <div class="content">
                 <div class="title">
-                    <h1>Admin Panel</h1>
+                    <h1>Add</h1>
                 </div>
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
+                <form action="add.php" method="POST">
                     <div class="userinput">
                         <h3>Tip:</h3>
                         <textarea name="tip" placeholder="Type tip for bot"></textarea>
@@ -40,11 +34,29 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
                 </form>
             </div>
             <div class="list">
-                <h3>tips and answers</h3>
+                <div class="title">
+                    <h1>Edit</h1>
+                </div>
                 <ol>
                 <?php
                 foreach($_SESSION['list'] as $option){
-                    echo "<li>{$option['tips']} | {$option['answer']} > <a href='edit.php'>Edit</a> <</li>";
+                    echo<<<END
+                    <div class="content">
+                        <form action="edit.php" method="POST">
+                            <div class="userinput">
+                                <h3>id:<h3>
+                                <textarea name="editid" readonly>{$option['id']}</textarea>
+                                <h3>Tip:</h3>
+                                <textarea name="edittip">{$option['tips']}</textarea>
+                                <h3>answer:</h3>
+                                <textarea name="editanswer">{$option['answer']}</textarea>
+                            </div>
+                            <div class="subbutton">
+                                <input type="submit" name="edit" value="Edit Option">
+                            </div>
+                        </form>
+                    </div>
+                    END;
                 }
                 ?>
                 </ol>

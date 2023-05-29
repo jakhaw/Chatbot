@@ -23,6 +23,7 @@ main{
     width: 300px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
 }
 .title{
     text-align: center;
@@ -88,10 +89,12 @@ p{
     border-radius: 10px;
 }
 .list{
-    background-color: #aaaaaa;
-    padding: 5px 40px;
     margin-top: 30px;
     text-transform: capitalize;
+    background-color: #aaaaaa;
+    padding: 3px 10px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px;
 }
 .logout{
     text-align: center;
@@ -100,4 +103,14 @@ p{
 .list h3{
     text-align: center;
     color: rgb(0, 16, 156);
+}
+ol{
+    padding: 0;
+}
+ol li{
+    margin-bottom: 40px;
+}
+.list .content{
+    
+    box-shadow: 5px 5px 20px inset;
 }
