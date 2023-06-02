@@ -3,8 +3,9 @@ body{
     height: 100%;
     padding: 0;
     margin: 0;
-    background-color: #666666;
-    font-family: 'Courier New', Courier, monospace;
+    background-color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
 }
 html{
     height: 100%;
@@ -15,94 +16,56 @@ main{
     width: 100%;
     height: 100%;
 }
-.content{
-    background-color: #aaaaaa;
-    border-radius: 10px;
-    padding: 10px 20px 25px 20px;
-    box-shadow: 10px 10px 20px;
-    width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
-}
-.title{
+p{
+    color: rgb(199, 2, 2);
+    font-family: 'Courier Prime', monospace;
     text-align: center;
-    text-transform: capitalize;
-    color: rgb(0, 16, 156);
-    font-size: 18px;
 }
-.userinput{
-    text-transform: capitalize;
-    color: rgb(2, 14, 121);
+h1{
+    font-family: 'Courier Prime', monospace;
+    margin: 0;
 }
-.admininput{
-    text-transform: capitalize;
-    color: rgb(2, 14, 121);
-    padding-left: 40px;
+h3{
+    font-family: 'Courier Prime', monospace;
+    margin: 5px;
+    text-transform: uppercase;
 }
-input{
-    border-radius: 10px;
-    border: none;
-    padding: 5px 8px;
+input[type="submit"]{
+    font-family: 'Courier Prime', monospace;
+    border-radius: 30px;
+    border: 1px solid rgb(9, 144, 255);
+    padding: 10px 15px;
     font-size: 15px;
-    transition: 300ms;
-    font-family: 'Courier New', Courier, monospace;
+    transition: 500ms;
+    background-color: rgb(9, 144, 255);
+    color: white;
 }
-.subbutton{
-    margin-top: 30px;
-    text-align: center;
-}
-.subbutton input:hover{
+input[type="submit"]:hover{
     cursor: pointer;
-    box-shadow: 3px 3px 6px;
-}
-.answer{
-    min-height: 36px;
     background-color: white;
-    border-radius: 10px;
-    padding: 5px 10px;
-    color: black;
+    color: rgb(9, 144, 255);
+}
+input[type="text"], input[type="password"]{
+    border: 3px solid rgb(9, 144, 255);
+    padding: 10px 15px;
+    font-size: 30px;
+    font-family: 'Oswald', sans-serif;
 }
 textarea{
+    font-family: 'Oswald', sans-serif;
     color: black;
-    border-radius: 10px;
+    border-radius: 50px;
     font-size: 16px;
-    font-family: 'Courier New', Courier, monospace;
     text-transform: capitalize;
     border: none;
     resize: none;
     width: 280px;
-    padding: 5px 10px;
+    padding: 7px 20px;
+    background-color: #eee;
+    box-sizing: border-box;
 }
 textarea:focus{
     outline: none;
-    box-shadow: 3px 3px 6px;
-}
-p{
-    color: rgb(199, 2, 2);
-}
-.logout a{
-    text-decoration: none;
-    color: rgb(2, 14, 121);
-    background-color: #aaaaaa;
-    padding: 20px;
-    border-radius: 10px;
-}
-.list{
-    margin-top: 30px;
-    text-transform: capitalize;
-    background-color: #aaaaaa;
-    padding: 3px 10px;
-    border-radius: 10px;
-    box-shadow: 10px 10px 20px;
-}
-.logout{
-    text-align: center;
-    margin-top: 50px;
-}
-.list h3{
-    text-align: center;
-    color: rgb(0, 16, 156);
 }
 ol{
     padding: 0;
@@ -110,7 +73,142 @@ ol{
 ol li{
     margin-bottom: 40px;
 }
-.list .content{
-    
-    box-shadow: 5px 5px 20px inset;
+.adminpanel textarea{
+    background-color: white;
+    border: 3px solid rgb(9, 144, 255);
+    border-radius: 0px;
+    width: 100%;
+}
+.content{
+    background-color: #fff;
+    box-shadow: 0px 0px 20px 5px rgba(170, 170, 170, 1);
+    border: 1px solid rgba(170, 170, 170, 0.3);
+    width: 600px;
+    min-height: 400px;
+}
+.page-content{
+    margin-top: 140px;
+}
+.adminpanel-content{
+    background-color: #fff;
+    box-shadow: 0px 0px 20px 5px rgba(170, 170, 170, 1);
+    border: 1px solid rgba(170, 170, 170, 0.3);
+    width: 600px;
+    min-height: 400px;
+    display: none;
+}
+.adminpanel-content.active{
+    display: block;
+}
+.title{
+    text-transform: uppercase;
+    color: white;
+    font-size: 18px;
+    background-color: rgb(9, 144, 255);
+    padding: 10px 15px;
+    box-shadow: 0px 5px 10px 2px rgba(170, 170, 170, 0.5);
+    margin-bottom: 30px;
+}
+.userinput{
+    text-transform: capitalize;
+    min-height: 224px;
+}
+.add-admininput{
+    padding: 0px 40px;
+    min-height: 245px;
+    display: grid;
+    grid-template-rows: auto auto;
+    align-content: center;
+    gap: 50px;
+}
+.edit-admininput{
+    padding: 0px 15px;
+}
+.main-subbutton{
+    margin-top: 30px;
+    padding: 6px 20px;
+    box-shadow: 0px -2px 10px 2px rgba(170, 170, 170, 0.5);
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-content: center;
+    gap: 40px;
+}
+.subbutton{
+    margin-top: 30px;
+    padding: 6px 20px;
+    box-shadow: 0px -2px 10px 2px rgba(170, 170, 170, 0.5);
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-content: center;
+}
+.edit-subbutton{
+    margin-top: 30px;
+    padding: 6px 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 50px;
+}
+.send-btn{
+    display: grid;
+    place-content: center;
+}
+.text-content{
+    min-height: 112px;
+}
+.answer{
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 10px;
+    color: black;
+    box-shadow: 0px 0px 20px 10px rgba(170, 170, 170, 0.3);
+    width: 50%;
+    margin-left: 20px;
+}
+.question{
+    background-color: rgb(9, 144, 255);
+    color: white;
+    border-radius: 10px;
+    padding: 10px 10px;
+    box-shadow: 0px 0px 20px 10px rgba(170, 170, 170, 0.3);
+    width: 50%;
+    margin-right: 20px;
+    margin-left: auto;
+}
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: rgb(9, 144, 255);
+    color: white;
+}
+.header-nav{
+    display: grid;
+    grid-template-columns: auto auto;
+    font-size: 26px;
+    padding: 20px 20px;
+    justify-content: space-between;
+}
+.logout a{
+    color: white;
+}
+.btn-container{
+    height: 40px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.tab-btn{
+    color: rgb(151, 151, 151);
+    border: none;
+    background-color: rgb(10, 81, 139);
+    transition: 300ms;
+    cursor: pointer;
+}
+.tab-btn.active{
+    background-color: rgb(9, 144, 255);
+    color: white;
 }

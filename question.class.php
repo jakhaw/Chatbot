@@ -13,6 +13,7 @@ class Question extends Db{
 
         if($stmt->rowCount() === 0){
             $stmt = null;
+            $_SESSION['answer'] = "sorry, i don't have an answer to your question :(";
             header('Location: index.php?error=answernotfound');
             exit();
         }

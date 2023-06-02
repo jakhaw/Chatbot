@@ -13,7 +13,7 @@ class Login extends Db{
         if($query->rowCount() === 0){
             $query = null;
             $_SESSION['error'] = "Incorrect username or password";
-            header('Location: index.php?error=usernotfound');
+            header('Location: adminpage.php?error=usernotfound');
             exit();
         }
 
@@ -22,7 +22,7 @@ class Login extends Db{
         if($passwordFromDB[0]['password'] !== $password){
             $query = null;
             $_SESSION['error'] = "Incorrect username or password";
-            header('Location: index.php?error=loginfailed');
+            header('Location: adminpage.php?error=loginfailed');
             exit();
         }elseif($passwordFromDB[0]['password'] === $password){
             $_SESSION['login'] = true;

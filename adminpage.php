@@ -28,11 +28,9 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
                     <h1>Admin Panel Login</h1>
                 </div>
                 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
-                    <div class="admininput">
-                        <h3>Username:</h3>
-                        <input type="text" name="username">
-                        <h3>Password:</h3>
-                        <input type="password" name="password">
+                    <div class="add-admininput">
+                        <input type="text" name="username" placeholder="Username:">
+                        <input type="password" name="password" placeholder="Password:">
                     </div>
                     <p>
                     <?php
